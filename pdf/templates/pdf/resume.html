@@ -1,0 +1,222 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>{{ user_profile.name }}</h2>
+    <h2> {{ user_profile.email }}</h2>
+    <h2> {{ user_profile.phone }}</h2>
+    <hr/>
+    <br/>
+    <p>Summary</p>
+    <p>{{user_profile.summary}}</p>
+    <p>Skills</p>
+    <p>{{user_profile.skills}}</p>
+    <p>Education</p>
+    <ul>
+        <li>{{user_profile.school}}</li>
+        <li>{{ user_profile.university }}</li>
+    </ul>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            font-size: 1em;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .row .section-content {
+            margin-right: 20px;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Resume</h1>
+    
+    <div class="section">
+        {% if profile.name %}
+        <!-- <div class="section-title"></div> -->
+        <div class="section-content"><h2>{{ profile.name }}</h2></div>
+    
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="section">
+            {% if profile.email %}
+        
+        
+            <!-- <div class="section-title">Email:</div> -->
+            <div class="section-content">{{ profile.email }}</div>
+            {% endif %}
+        </div>
+        <div class="section">
+            {% if profile.phone %}
+            <!-- <div class="section-title">Phone</div> -->
+            <div class="section-content">{{ profile.phone }}</div>
+        {% endif %}
+        </div>
+    </div>
+    <div class="row">
+    {% if profile.portfolio_url %}
+    <div class="section">
+        <!-- <div class="section-title">Portfo:</div> -->
+        <div class="section-content">{{ profile.portfolio_url }}</div>
+    </div>
+    {% endif %}
+
+    {% if profile.linkedin_url %}
+    <div class="section">
+        <!-- <div class="section-title"></div> -->
+        <div class="section-content">{{ profile.linkedin_url }}</div>
+    </div>
+    {% endif %}
+
+    {% if profile.github_url %}
+    <div class="section">
+        <!-- <div class="section-title"></div> -->
+        <div class="section-content">{{ profile.github_url }}</div>
+    </div>
+    {% endif %}
+    </div>
+    <hr/>
+
+    {% if profile.summary %}
+    <div class="section">
+        <div class="section-title"><h3>Summary</h3></div>
+        <div class="section-content"><p>{{ profile.summary }}</p></div>
+    </div>
+    {% endif %}
+
+    <hr/>
+
+    
+    {% if profile.degree %}
+    <div class="section">
+        <div class="section-title"><h3>Degree</h3></div>
+        <div class="section-content"><p>{{ profile.degree }}</p></div>
+    </div>
+    {% endif %}
+
+    {% if profile.school %}
+    <div class="section">
+        <div class="section-title"><h3>School:</h3></div>
+        <div class="section-content"><p>{{ profile.school }}</p></div>
+    </div>
+    {% endif %}
+
+
+    {% if profile.university %}
+    <div class="section">
+        <div class="section-title"><h3>University</h3></div>
+        <div class="section-content"><p>{{ profile.university }}</p></div>
+    </div>
+    {% endif %}
+    <hr/>
+
+    {% if profile.previous_work %}
+    <div class="section">
+        <div class="section-title"><h3>Previous Work:</h3></div>
+        <div class="section-content"><p>{{ profile.previous_work }}</p></div>
+    </div>
+    {% endif %}
+
+    {% if profile.skills %} 
+    <div class="section">
+        <div class="section-title"><h3>Skills</h3></div>
+        <div class="section-content"><p>{{ profile.skills }}</p></div>
+    </div>
+    {% endif %}
+    <hr/>
+
+    {% if profile.projects %}
+    <div class="section">
+        <div class="section-title"><h3>Projects</h3></div>
+        <div class="section-content"> <p>{{ profile.projects }}</p></div>
+    </div>
+    {% endif %}
+    
+
+    {% if profile.hobbies %}
+    <div class="section">
+        <div class="section-title"><h3>Hobbies</h3></div>
+        <div class="section-content"><p>{{ profile.hobbies }}</p></div>
+    </div>
+    {% endif %}
+
+    {% if profile.certications %}
+    </div>
+    <div class="section">
+        <div class="section-title"><h3>Certifications</h3></div>
+        <div class="section-content"><p>{{ profile.certications }}</p></div>
+    </div>
+    {% endif %}
+
+    
+    
+
+
+    
+
+    
+
+    
+    
+
+</body>
+
+</html>
